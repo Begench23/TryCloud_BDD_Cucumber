@@ -11,9 +11,9 @@ public class Hooks {
 
 
     @After
-    public void tearDownn(Scenario scenario){
+    public void tearDownn(Scenario scenario) {
 
-        if (scenario.isFailed()){
+        if (scenario.isFailed()) {
             WebDriver driver = Driver.getDriver();
             byte[] bytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
             scenario.attach(bytes, "image/png", scenario.getName());

@@ -8,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPages {
 
     public LoginPages() {
-        PageFactory.initElements(Driver.getDriver(), this);}
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
 
     @FindBy(xpath = "//input[@id='user']")

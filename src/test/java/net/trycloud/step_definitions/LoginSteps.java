@@ -39,7 +39,7 @@ public class LoginSteps {
         String expectedTitle = "Dashboard - Trycloud";
         String actualTitle = Driver.getDriver().getTitle();
 
-        Assert.assertEquals(expectedTitle,actualTitle);
+        Assert.assertEquals(expectedTitle, actualTitle);
     }
 
 }
