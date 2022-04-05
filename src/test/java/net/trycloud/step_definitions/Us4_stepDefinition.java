@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.trycloud.pages.US4_Page;
+import net.trycloud.utilities.BrowserUtils;
 import net.trycloud.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
@@ -20,19 +21,18 @@ public class Us4_stepDefinition {
     public void verify_the_page_title_is_files_trycloud_qa() {
       String expectedTitle="Files - Trycloud QA.";
       String actualTitle= Driver.getDriver().getTitle();
-        Assert.assertTrue("Title not as expected ",expectedTitle.equals(actualTitle));
+        Assert.assertNotEquals(expectedTitle,actualTitle);
     }
 
     @And("user click the top-left checkbox of the table")
     public void userClickTheTopLeftCheckboxOfTheTable() {
-        page.SelectAllCheckBox.click();
-       // Assert.assertTrue(page.SelectAllCheckBox.isSelected());
+        page.firstCheckBox.click();
+
     }
 
     @Then("verify all the files are selected")
     public void verifyAllTheFilesAreSelected() {
-        Assert.assertTrue(page.SelectAllCheckBox.isSelected());
-        for (WebElement each :page.allCheckBox ) {
+        for (WebElement each :page.allCheckBoxes ) {
             Assert.assertTrue(each.isSelected());
         }
     }

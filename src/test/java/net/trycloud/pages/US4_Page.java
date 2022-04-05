@@ -16,10 +16,8 @@ public class US4_Page {
     public WebElement fileModule;
 
     @FindBy(xpath = "(//th[@id='headerSelection'])[1]")
-    public WebElement SelectAllCheckBox;
+    public WebElement firstCheckBox;
 
-    @FindBy(xpath = "//tbody[@id='fileList']//td/input")
-    public List<WebElement> allCheckBox;
+    @FindBy(xpath = "//tbody[@id='fileList']//input[@type='checkbox']")
+    public List<WebElement> allCheckBoxes;
 }
-// @FindBy(xpath = "//tbody[@id='fileList']//td[1]")
-//    public List<WebElement> allCheckBox;
